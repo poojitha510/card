@@ -1,0 +1,129 @@
+*,
+*::before
+*::after
+{
+    box-sizing: border-box;
+}
+
+*{
+    font-family:'Times New Roman', Times, serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    
+}
+strong{
+    color: blue;
+}
+p.name{
+    color: rgb(42, 165, 81);
+    font-weight: 50px;
+}
+body{
+   background-color: rgb(19, 1, 1);
+    
+}
+
+.card_container{
+    perspective: 1000px;
+    width: 350px;
+    height: 280px;
+    margin: 100px auto;
+   
+}
+.card{
+   width: 100%;
+   height: 100%;
+   transform-style: preserve-3d;
+   transition: transform 0.8s ease-in-out;
+}
+.card_container:hover .card{
+    transform: rotateY(180deg);
+}
+.frontcard,
+.backcard{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   border-radius: 25px;
+   overflow: hidden;
+   box-shadow: 6px 12px black;
+}
+.frontcard{
+    background-color: white;
+    padding: 20px;
+}
+.frontcard img{
+    height: 180px;
+    width: 180px;
+    margin: 65px auto;
+    display: block;
+    max-width: 80%;
+}
+.backcard{
+    position: relative;
+    padding: 5px;
+    border-radius: 20px;
+    background:linear-gradient(rgb(255, 0, 0), rgb(28, 237, 56),rgb(11, 190, 250),rgb(240, 10, 182)) ;
+   transform: rotateY(180deg);
+   animation: flow-border 0.2s linear infinite;
+   background-size: 300% 300%;
+}
+.backcard_content {
+    background-color: rgb(25, 30, 29);
+    color: rgb(224, 227, 231);
+    border-radius: 13px;
+    padding: 16px 20px 12px 20px;
+    overflow-y: auto;
+    height: 80;
+    text-align: left;
+}
+.name{
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: aqua;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.title{
+    font-size: 20px;
+    font-weight: 200;
+    margin: 8px 0;
+}
+.description {
+    color: beige;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.btn{
+   padding: 6px 12px; 
+   border: 1px solid greenyellow;
+   background-color: aquamarine;
+   color: blueviolet;
+   border-radius: 5px;
+   cursor: pointer;
+   font-weight: 700;
+   font-size: 10px;
+   text-decoration: none;
+   display: inline-block;
+   margin-top: 5px;
+}
+.btn:hover{
+    background-color: brown;
+    color: cyan;
+    border-color: magenta;
+}
+.frontcard:hover{
+    transform: rotateY(180deg);
+}
+@keyframes flow-border{
+    0%{
+        background-position: 0% 50%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+
